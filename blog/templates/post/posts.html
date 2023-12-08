@@ -10,6 +10,8 @@
 <li>{{ i.subtitulo }}</li>
 <li>{{ i.categoria }}</li>
 
+<a   id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">  Entrar al post </a>
+
 {% empty %}
 
 <h1>no hay registros</h1>

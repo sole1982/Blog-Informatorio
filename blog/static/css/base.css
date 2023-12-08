@@ -1,0 +1,10 @@
+.color:focus {
+    outline: 2px green solid; 
+   box-shadow: 2px 2px 2px greenyellow;/* Cambia el color y grosor según tus preferencias */
+  }
+
+.color{
+    border-radius: 6px;
+    margin-right: 5px;
+    border: 2px solid green;
+}

@@ -3,21 +3,38 @@
 
 {% block contenido %}
 
-<center>
-    <form method= "POST" style="margin: 200px;">
-        <h1> Formulario de contacto</h1>
-        <br>
-        {% if messages %}
-            {% for message in messages %}
-               <div class='message {( message.tags )}'> {( message )} </div>
-            {% endfor %}%}
-        {% endif %}
-        <table>
-            {% csrf_token %}
-            {{ form }}
-        </table>
-        <input type="submit" value="enviar">
-    </form>
-</center>
+<div class="container mt-5">
+  <form method="POST" style="margin: 200px;">
+    <h1 class="mb-4">Formulario de contacto</h1>
+    
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }} mb-4" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.nombre_apellido.label_tag }}
+      {{ form.nombre_apellido }}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label_tag }}
+      {{ form.email }}
+    </div>
+    <div class="mb-3">
+      {{ form.asunto.label_tag }}
+      {{ form.asunto }}
+    </div>
+    <div class="mb-3">
+      {{ form.mensaje.label_tag }}
+      {{ form.mensaje }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
 
 {% endblock contenido %}

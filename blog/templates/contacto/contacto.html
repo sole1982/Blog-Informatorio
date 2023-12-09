@@ -4,7 +4,7 @@
 {% block contenido %}
 
 <div class="container mt-5">
-  <form method="POST" style="margin: 200px;">
+  <form method="POST" style="margin: 200px;" id="contactoForm">
     <h1 class="mb-4">Formulario de contacto</h1>
     
     {% if messages %}
@@ -17,16 +17,20 @@
     
     {% csrf_token %}
     <div class="mb-3">
-      {{ form.nombre_apellido.label_tag }}
-      {{ form.nombre_apellido }}
+      {{ form.nombre.label_tag }}
+      {{ form.nombre }}
+    </div>
+    <div class="mb-3">
+        {{ form.apellido.label_tag }}
+        {{ form.apellido }}
     </div>
     <div class="mb-3">
       {{ form.email.label_tag }}
       {{ form.email }}
     </div>
     <div class="mb-3">
-      {{ form.asunto.label_tag }}
-      {{ form.asunto }}
+      {{ form.consulta.label_tag }}
+      {{ form.consulta }}
     </div>
     <div class="mb-3">
       {{ form.mensaje.label_tag }}
@@ -36,5 +40,6 @@
     <button type="submit" class="btn btn-primary">Enviar</button>
   </form>
 </div>
+
 
 {% endblock contenido %}

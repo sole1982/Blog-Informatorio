@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="container mt-5">
+  <form method="POST" style="margin: 200px;" id="contactoForm">
+    <h1 class="mb-4">Formulario de contacto</h1>
+    
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }} mb-4" role="alert">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+    
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.nombre.label_tag }}
+      {{ form.nombre }}
+    </div>
+    <div class="mb-3">
+        {{ form.apellido.label_tag }}
+        {{ form.apellido }}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label_tag }}
+      {{ form.email }}
+    </div>
+    <div class="mb-3">
+      {{ form.consulta.label_tag }}
+      {{ form.consulta }}
+    </div>
+    <div class="mb-3">
+      {{ form.mensaje.label_tag }}
+      {{ form.mensaje }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
+
+<script>
+document.getElementById("contactoForm").addEventListener("submit", function() {
+    alert("Consulta enviada.");
+});
+</script>
+
+{% endblock contenido %}

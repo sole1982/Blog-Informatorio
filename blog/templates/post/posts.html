@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{%block contenido%}
+
+{% for i in posts %}
+
+<br>
+<li>{{ i.titulo }}</li>
+<li>{{ i.subtitulo }}</li>
+<li>{{ i.categoria }}</li>
+
+<a   id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">  Entrar al post </a>
+
+{% empty %}
+
+<h1>no hay registros</h1>
+
+{% endfor   %}
+
+
+
+
+
+
+{% endblock %}

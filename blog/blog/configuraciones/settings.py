@@ -17,7 +17,7 @@ SECRET_KEY = 'django-insecure-@a!su)yw7zidcgio!_nbgu=6-udv=7=d^j-kwi+@yek!pfkei*
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'usuario.Usuario'
 # Application definition
 
 INSTALLED_APPS = [
@@ -28,8 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-     'apps.posts',
-     'apps.contacto',
+   
 ]
 
 MIDDLEWARE = [

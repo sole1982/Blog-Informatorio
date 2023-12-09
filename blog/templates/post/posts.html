@@ -2,15 +2,60 @@
 
 
 {%block contenido%}
+<main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+      </div>
+    </div>
 
-{% for i in posts %}
+    {% for i in posts %}
+<div>
+<div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary-emphasis">{{ i.categoria }}</strong>
+          <h3 class="mb-0">{{ i.titulo }}</h3>
+          <div class="mb-1 text-body-secondary">Nov 12</div>
+          <p class="card-text mb-auto">{{ i.subtitulo }}</p>
+          <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}" class="icon-link gap-1 icon-link-hover stretched-link">
+            Continuar leyendo...
+            <svg class="bi"><use xlink:href="#chevron-right"/></svg>
+          </a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+       
+       
+       
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="98" height="144" viewBox="0 0 98 144" fill="none" style="float: right;" >    >
+        <path d="M50.7035 49.4156L58.1287 1.38015C58.3847 -0.252989 60.4971 -0.515711 61.0447 1.01802C64.8925 11.7612 71.4144 36.8618 55.5043 52.1849L50.7035 49.4156Z" fill="#B7D331"/>
+        <path d="M47.3821 60.6416L2.16936 78.67C0.63311 79.2807 -0.668436 77.5978 0.377068 76.3481C7.68848 67.5789 26.0239 49.2097 47.3323 55.1031L47.3821 60.6416Z" fill="#B7D331"/>
+        <path d="M59.5868 57.1694L97.3743 87.8156C98.6616 88.8594 97.8223 90.812 96.215 90.5138C84.9847 88.4049 59.9851 81.3612 54.7646 59.9174L59.5868 57.1765V57.1694Z" fill="#B7D331"/>
+        <path d="M55.5145 56.9776L47.7244 57.6978L55.7282 143.998L63.5184 143.278L55.5145 56.9776Z" fill="#B7D331"/>
+        <path d="M58.9829 59.7788C60.5474 55.4521 58.3025 50.6784 53.9687 49.1165C49.635 47.5545 44.8534 49.7957 43.2889 54.1224C41.7244 58.4491 43.9693 63.2228 48.3031 64.7847C52.6369 66.3467 57.4184 64.1055 58.9829 59.7788Z" fill="#AABC02"/>
+        <path d="M56.948 59.1792C55.7176 62.3815 52.1117 63.9863 48.9041 62.7579C45.6964 61.5295 44.0891 57.9295 45.3195 54.7271C46.5499 51.5247 50.1558 49.92 53.3635 51.1484C56.5711 52.3768 58.1785 55.9768 56.948 59.1792Z" fill="white"/>
+        <path opacity="0.25" d="M28.122 65.8818L15.832 70.9375" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M40.9241 60.6206L32.7521 63.9792" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M67.46 67.1175L61.5426 62.4595" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M80.8667 77.6761L70.4259 69.4536" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M91.7343 86.2394L84.7998 80.772" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M55.6963 30.0596L53.6479 43.1744" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M57.83 16.4053L56.4645 25.1248" stroke="#89960B" stroke-width="0.67" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M46.6425 55.2593C47.6097 52.7528 50.4262 51.496 52.9368 52.4617" stroke="#89960B" stroke-width="0.52" stroke-miterlimit="10" stroke-linecap="round"/>
+        <path opacity="0.25" d="M55.7389 58.7461C54.7717 61.2526 51.9552 62.5094 49.4446 61.5437" stroke="#89960B" stroke-width="0.52" stroke-miterlimit="10" stroke-linecap="round"/>
+      </svg>
+    </div>
+  
 
-<br>
-<li>{{ i.titulo }}</li>
-<li>{{ i.subtitulo }}</li>
-<li>{{ i.categoria }}</li>
 
-<a   id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">  Entrar al post </a>
+
+
 
 {% empty %}
 
@@ -19,7 +64,7 @@
 {% endfor   %}
 
 
-
+</div>
 
 
 

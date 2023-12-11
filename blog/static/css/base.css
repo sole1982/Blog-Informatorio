@@ -95,7 +95,8 @@ body {
   }
 
 .navegacion-horizontal {
-  background-color: rgba(245, 245, 245, 0.455);
+  /*background-color: rgba(245, 245, 245, 0.455);*/
+  background-color: crimson;
   
   position: fixed;
   width:  100%;

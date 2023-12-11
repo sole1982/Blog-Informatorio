@@ -56,8 +56,40 @@
     </li>
   </ul>
 </div>
+<!--navbar horizontal -->
+<div class="navegacion-horizontal">
+<li><a class="nav-item" href="#">Contacto</a></li>
+<li><a class="nav-item" href="#">Quienes Somos</a></li>  
+<li><a class="nav-item" href="#">Post</a></li>  
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias</a>
+ <ul class="dropdown-menu">
+  
+    <li><a class="dropdown-item" href="#"> Información General </a> </li>
+    <li><a class="dropdown-item" href="#"> Biodiversidad </a> </li>
+    <li><a class="dropdown-item" href="#"> Reciclaje </a> </li>
+    <li><a class="dropdown-item" href="#"> Cambio Climático </a> </li>
+    <li><a class="dropdown-item" href="#"> Vida Verde </a> </li>
+    <li><a class="dropdown-item" href="#">Energías Renovables  </a> </li>
+    <li><a class="dropdown-item" href="#"> Huerta Familiar </a> </li>
+    <li><a class="dropdown-item" href="#"> Permacultura </a> </li>
+    <li><a class="dropdown-item" href="#"> Educación Ambiental </a> </li>          
+    <li>
+      <hr class="dropdown-divider">
+    </li>
+    <li><a class="dropdown-item" href="#">Todas</a></li>
+  </ul>
+</li>
+</ul>
+
+</div>
+
+
+
+
+
 <!--nAVBAR OFFCANVA-->
-<nav class="navbar bg-body-tertiary" aria-label="Light offcanvas navbar">
+<nav class="navbar bg-body-tertiary d-lg-none" aria-label="Light offcanvas navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <svg xmlns="http://www.w3.org/2000/svg" width="184" height="118" viewBox="0 0 184 218" fill="none">
@@ -125,13 +157,18 @@
             <a class="nav-link" href="{% url 'apps.contacto:contacto' %} ">Contacto</a>
           </li> <br>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                 Noticias
-
-    
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Ambiente</a></li>
-              <li><a class="dropdown-item" href="#">Energia</a></li>
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias</a>
+           <ul class="dropdown-menu">
+            
+              <li><a class="dropdown-item" href="#"> Información General </a> </li>
+              <li><a class="dropdown-item" href="#"> Biodiversidad </a> </li>
+              <li><a class="dropdown-item" href="#"> Reciclaje </a> </li>
+              <li><a class="dropdown-item" href="#"> Cambio Climático </a> </li>
+              <li><a class="dropdown-item" href="#"> Vida Verde </a> </li>
+              <li><a class="dropdown-item" href="#">Energías Renovables  </a> </li>
+              <li><a class="dropdown-item" href="#"> Huerta Familiar </a> </li>
+              <li><a class="dropdown-item" href="#"> Permacultura </a> </li>
+              <li><a class="dropdown-item" href="#"> Educación Ambiental </a> </li>          
               <li>
                 <hr class="dropdown-divider">
               </li>
@@ -152,6 +189,12 @@
     </div>
   </div>
 </nav>
+
+
+
+
+
+
 
   
 

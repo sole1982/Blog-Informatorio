@@ -1,3 +1,4 @@
+
 <br>
 <li>{{ posts.titulo }}</li>
 <li>{{ posts.subtitulo }}</li>
@@ -5,3 +6,42 @@
 <br>
 <li>{{ posts.texto }}</li>
 <img src="{{ posts.imagen.url }}" alt="">
+
+<div>
+Comnetarios
+
+</div>
+
+<br>
+<div>
+{% for comentario in comentarios %}
+<table>{{comentario.usuario}}  -  {{ comentario.fecha }}</table>
+
+<ul>
+    <p> {{ comentario.texto }}</p>
+</ul>
+{% empty %}
+<li> no hay comnetario</li>
+{% endfor%}
+
+
+</div>
+
+<a id="comentraio"></a>
+
+<form method="POST">
+{% csrf_token %}
+{% if user.is_authenticated   %}
+<h1>deja tu coemntario</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Comentar">
+</form>
+{% else %}
+<h2>debes uniciar sesion</h2>
+<a class="btn" href="#">iniciar sesion</a>
+<input type="hidden" name="next" >
+{% endif%}
+</form>

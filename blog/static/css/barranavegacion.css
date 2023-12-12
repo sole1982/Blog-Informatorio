@@ -1,6 +1,6 @@
 .navegacion-horizontal {
     background-color: rgba(245, 245, 245, 0.455);
-   border-bottom: solid black 2px;
+   
     box-shadow: 2px 2px 9px rgb(13, 220, 33);
     position: sticky;
     width:  100%;

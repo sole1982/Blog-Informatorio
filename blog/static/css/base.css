@@ -94,11 +94,12 @@ body {
     display: block !important;
   }
 
-.navegacion-horizontal {
-  background-color: rgba(245, 245, 245, 0.455);
+.fondo{
   
-  position: fixed;
-  width:  100%;
-  
+background: rgba(132, 146, 131, 0.417);
+flex-shrink: 0;
+padding: 20px;
+height: 550px;
+
 
 }

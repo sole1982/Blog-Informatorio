@@ -8,7 +8,7 @@ from django.urls import reverse
 # Create your views here.
 
 class RegistrarUsuario(CreateView):
-    template_name = 'registration/register.html'
+    template_name = 'registration/registrar.html'
     form_class = RegistroUsuarioForm
 
     def form_valid(self, form):

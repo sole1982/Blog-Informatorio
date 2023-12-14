@@ -1,9 +1,9 @@
-{% {% extends "base.html" %}%}
+{% extends "base.html" %}
 {% load static %}
 
-<title> {% block title %} Registro de usuario {% endblok title %}</title>
-
 {% block contenido %}
+
+<title> {% block title %} Registro de usuario {% endblock title %}</title>
 <center>
 
     <form method="POST" style="margin-top: 300px";>
@@ -19,7 +19,7 @@
         <div class="container">
             <table>{{ form }}</form>
             <br>
-            <a style="color: black;" href="{% url 'apps.usuario:register' %}">¿Todavía no está registrado? Registrate.</a>
+            <a style="color: black;" href="{% url 'apps.usuario:registrar' %}">¿Todavía no está registrado? Registrate.</a>
             <br><br>
             <button type="submit" class="btn btn-success btn-lg px-3">Iniciar sesión</button>
         </div>

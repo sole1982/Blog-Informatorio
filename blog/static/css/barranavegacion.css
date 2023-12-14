@@ -1,7 +1,7 @@
 .navegacion-horizontal {
-    background-color: rgba(245, 245, 245, 0.455);
+    background-color: rgba(131, 227, 147, 0.112);
    
-    box-shadow: 2px 2px 9px rgb(13, 220, 33);
+   
     position: sticky;
     width:  100%;
     list-style-type: none;
@@ -21,3 +21,5 @@
    text-shadow: 6px 5px 2px rgba(2, 77, 4, 0.295);
    font-weight: bolder;
   }
+
+  

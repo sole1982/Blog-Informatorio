@@ -59,8 +59,8 @@
 </div>
 <!--navbar horizontal -->
 <div class="navegacion-horizontal navbar d-none d-sm-flex ">
-<li><a class="nav-item ms-3" href="#">Vida Verde</a></li>
-<li><a class="nav-item" href="{% url 'apps.posts:posts' %} ">Post</a></li>  
+<li><a class="nav-item ms-3" href="/">Vida Verde</a></li>
+<li><a class="nav-item" href="{% url 'apps.posts:posts' %}">Post</a></li>  
  
 
 <li class="nav-item dropdown"><a class="nav-link me-3"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias</a>
@@ -188,61 +188,62 @@
 
 
 <!--==============================footer=================================-->
-<footer>
+<footer class="mt-5 pt-3 pb-3 bg-dark text-light">
   <div class="container">
-      <div class="row">
-          <div class="col-md-4">
-              <div class="mb-4">
-                  <h3>Contacto</h3>
-                  <p>Guide.com is one o free website templates created by TemplateMonster.com. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
-                  <a href="#" class="btn btn-primary">Más</a>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="mb-4">
-                  <h3>Últimas Noticias</h3>
-                  <p>Nam liber tempor cum soluta nobis eleifend option congue nihimperdiet doming quod mazim placerat facer possim assum orem ipsum dolor sit amet consectetuer.</p>
-                  <a href="#" class="btn btn-primary">Más</a>
-              </div>
-          </div>
-          <div class="col-md-4">
-              <div class="mb-4">
-                  <h3>Categorías</h3>
-                  <ul class="list-unstyled">
-                      <li><a href="#">Información General</a></li>
-                      <li><a href="#">Biodiversidad</a></li>
-                      <li><a href="#">Reciclaje</a></li>
-                      <li><a href="#">Cambio Climático</a></li>
-                      <li><a href="#">Vida Verde</a></li>
-                      <li><a href="#">Energías Renovables</a></li>
-                      <li><a href="#">Huerta Familiar</a></li>
-                      <li><a href="#">Permacultura</a></li>
-                      <li><a href="#">Educación Ambiental</a></li>
-                  </ul>
-                  <a href="#" class="btn btn-primary">Más</a>
-              </div>
-          </div>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <h3 class="text-primary">Categorías</h3>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light">Información general</a></li>
+          <li><a href="#" class="text-light">Biodiversidad</a></li>
+          <li><a href="#" class="text-light">Reciclaje</a></li>
+          <li><a href="#" class="text-light">Cambio rlimático</a></li>
+          <li><a href="#" class="text-light">Vida Verde</a></li>
+          <li><a href="#" class="text-light">Energías renovables</a></li>
+          <li><a href="#" class="text-light">Huerta familiar</a></li>
+          <li><a href="#" class="text-light">Permacultura</a></li>
+          <li><a href="#" class="text-light">Educación Ambiental</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary mt-3">Más</a>
       </div>
-  </div>
+      <div class="col-md-3 mb-4">
+        <h3 class="text-primary">Últimas Noticias</h3>
+        <p>Nam liber tempor cum soluta nobis eleifend option congue nihimperdiet doming quod mazim placerat facer possim assum orem ipsum dolor sit amet consectetuer.</p>
+        <a href="#" class="btn btn-primary mt-3">Más</a>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h3 class="text-primary">Contacto</h3>
+        <ul class="list-unstyled">
+          <li class="text-light">Dirección: Av. SiempreViva n° 742</li>
+          <li class="text-light">Email: comision2.grupo4@gmail.com</li>
+          <li class="text-light">Teléfono: 03 03 456</li>
+        </ul>
+        <a href="{% url 'apps.contacto:contacto' %}" class="btn btn-primary mt-3">Contáctanos</a>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h4 class="text-primary">Redes Sociales</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://www.facebook.com" target="_blank" class="text-light">Facebook</a></li>
+          <li><a href="https://twitter.com" target="_blank" class="text-light">Twitter</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" class="text-light">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
 
-  <div class="container">
-      <div class="row">
-          <div class="col-md-3">
-              <h4>Redes Sociales</h4>
-              <ul class="list-unstyled">
-                  <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-                  <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-                  <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-              </ul>
-          </div>
-          <div class="col-md-9">
-              <div class="footer-bg">
-                  VidaVerde.com &copy; 2023 <span>Website Template by <a target="_blank" href="#" class="link">Comisión 2 - Grupo 4</a></span>
-              </div>
-          </div>
+    <div class="row mt-2 mb-2">
+      <div class="col-md-12">
+        <div class="footer-bg text-center p-3">
+          <p class="text-light" id="website">VidaVerde.com &copy; 2023
+          <span>- Website creada por <a target="_blank" href="#" class="text-light">Comisión 2 - Grupo 4</a></span></p>
+        </div>
       </div>
+    </div>
   </div>
 </footer>
+
+
+
+
 
 
     

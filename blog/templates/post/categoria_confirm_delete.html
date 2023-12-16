@@ -7,8 +7,8 @@
     <p> ¿Estás seguro de que quieres eliminar la categoría "{{ object.nombre }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <input type="sumbit" value="Sí, eliminar">
-        <a style="color: black;" href="{% url 'apps.posts:categoria_list' pk= categoria.pk %}">No cancelar</a>
+        <input type ="sumbit" value= "Sí, eliminar">
+        <a style="color: black;" href="{% url 'apps.posts:categoria_list' %}">No, cancelar</a>
     </form>
 </div>
 </center>

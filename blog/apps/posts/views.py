@@ -1,7 +1,7 @@
 from typing import Any
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 from .models import Post, Comentario, Categoria
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView
 from .forms import ComentarioForm, CrearPostForm, NuevaCategoriaForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy 
@@ -51,7 +51,7 @@ class ComentarioCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
     
     
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin,CreateView):
     model = Post
     form_class = CrearPostForm
     template_name = 'post/crear_post.html' 
@@ -68,3 +68,14 @@ class CategoriaCreateView(CreateView):
             return next_url
         else: 
             return reverse_lazy('apps.posts:post_create')
+        
+class CategorialistView(ListView):
+    model = Categoria
+    template_name = 'post/categoria_list.html'
+    context_object_name = 'categorias'
+    
+
+class CategoriaDeleteView(DeleteView):
+    model= Categoria
+    template_name = 'post/categoria_confirm_delete.html'
+    success_url = reverse_lazy('apps.posts:categoria_list')

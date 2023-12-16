@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
-{%  load static %}
+{% load static %}
+{% load colaborador_tags %}
 
 
-{%block contenido%}
+{% block contenido %}
 
 <div class = "container-fluid" style = "margin:200px;">
-  
-<div class = "container-fluid" style = "margin-top: 300px;">
-   <a id="boton_post" href = "{% url 'apps.posts:crear_post' %}">Crear nuevo Post</a>
-</div>
 
+{% if user.is_superuser or request.user|has_group:"colaborador" %}
+  <div class = "container-fluid" style = "margin-top: 300px;">
+    <a id="boton_post" href = "{% url 'apps.posts:crear_post' %}">Crear nuevo Post</a>
+  </div>
+{% endif %}
 
 <main class="container">
   {% if posts %}

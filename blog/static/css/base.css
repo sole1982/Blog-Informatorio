@@ -293,3 +293,14 @@ dl span {
 }
 
 /********************************* fin content *************************************/
+
+
+/************************* footer ******************************/
+#website {
+	margin-bottom: 10px;
+	padding-left: 30px; /* Ajusta el espaciado según sea necesario */
+	background: 'img/logofavicon.ico' no-repeat left center; /* Ruta de la imagen y posición */
+	background-size: 20px; /* Ajusta el tamaño de la imagen */
+	line-height: 20px; /* Ajusta la altura de línea según sea necesario */
+  }
+/************************* FIN footer ******************************/

@@ -2,7 +2,6 @@
 from django import forms
 from .models import Contacto
 
-
 class ContactoForm(forms.ModelForm):
     OPCIONES_CONSULTA = [
         ('informacion_general', 'Información General'),

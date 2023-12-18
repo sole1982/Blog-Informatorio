@@ -1,27 +1,29 @@
- {% extends "base.html" %}
- {% load static %}
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 
- <title> {% block title %} Registro de usuario {% endblock title %}</title>
- 
- {% block contenido %}
- <center>
+<title>{% block title %}Registro de usuario{% endblock title %}</title>
 
- <form method = "POST" enctype= "multipart/form.data" style="margin-top: 300px; margin-bottom: 100px;">
-    <h1 class="h1">Registro de usuario</h1>
-    <br>
-    <div class="messages">
-        {% for message in messages %}
-        <table {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</table>
-        {% endfor %}
-    </div>
-    <br>
-    {% csrf_token %}
-    <div class="container-fluid">
-        <table>{{ form }}</form>
-    </div>
-    <br><br>
-    <button type="submit" class="btn btn-success btn-lg px-3">Registrar</button>
-</form>
+{% block contenido %}
+  <div class="container mt-5">
+    <form method="POST" enctype="multipart/form-data" class="col-md-6 offset-md-3">
+      <h1 class="h1 text-center mb-4">Registro de usuario</h1>
 
-</center>
-{% endblock contenido  %}
+      {% if messages %}
+        <div class="alert alert-dismissible fade show" role="alert">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endif %}
+
+      {% csrf_token %}
+      <div class="mb-3">
+        {{ form|crispy }}
+      </div>
+
+      <button type="submit" class="btn btn-success btn-lg w-100">Registrar</button>
+    </form>
+  </div>
+{% endblock contenido %}

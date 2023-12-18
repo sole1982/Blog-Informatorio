@@ -22,4 +22,3 @@ class RegistroUsuarioForm(UserCreationForm):
             user = authenticate(request, username=username, password=password)
             if user:
                 login (request, user)
-

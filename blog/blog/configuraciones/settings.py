@@ -19,6 +19,8 @@ ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'usuario.Usuario'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 
 # Application definition
 
@@ -33,6 +35,7 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.posts',
     'apps.contacto',
+    'crispy_forms',
    
 ]
 
@@ -46,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'crispy_forms.middleware.CrispyMiddleware',
 ]
 
 ROOT_URLCONF = 'blog.urls'

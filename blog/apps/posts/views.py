@@ -1,7 +1,7 @@
 from typing import Any
 from django.shortcuts import render, redirect
 from .models import Post, Comentario
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .forms import ComentarioForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -48,3 +48,27 @@ class ComentarioCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.usuario = self.request.userform.instance.posts_id = self.kwargs['id'] 
         return super().form_valid(form)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    form_class = CrearPostForm
+    Templete_name = 'posts/modificar_post.html'
+    seccess_url = reverse_lazy('apps.posts:posts')

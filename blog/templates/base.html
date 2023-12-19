@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load colaborador_tags %}
 <!DOCTYPE html>
 <html lang="es-ar"  data-bs-theme="auto"         >
 <head>
@@ -90,6 +90,26 @@
 </li>
   
 <li><a class="nav-item me-4" href="{% url 'apps.contacto:contacto' %}">Contacto</a></li> 
+{% if user.is_authenticated %}
+   <li><a href="{% url 'apps.usuario:logout' %}">{{ user.username }}: Logout </a></li>
+   <div class="dropdown-content">
+     <table>
+        <tr>
+         {% if user.is_superuser or request.user|has_group:"colaborador" %}
+            <td><a href="{% url 'apps.usuario:usuario_list' %}">Lista de usuarios</a></td>
+         {% endif %}
+       </tr>
+       <tr>
+          <td><a href="#">Lista de categorías</a></td>
+       </tr>
+       <tr>
+           <td><a href="#">Lista de posts</a></td>
+       </tr>
+     </table>
+   </div>
+{%  else %}
+   <li><a href="{% url 'apps.usuario:login' %}">Login</a></li>
+{% endif %}
 <li><a class="nav-item me-4" href="{% url 'apps.usuario:login' %}">Iniciar Sesión</a></li>
 
 </ul>

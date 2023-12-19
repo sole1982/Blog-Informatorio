@@ -1,8 +1,9 @@
-
-
-
+{% extends 'base.html' %}
 {% load static %}
 
+{% load colaborador_tags %}
+
+{% block contenido %}
 
 
 
@@ -20,7 +21,7 @@
   
     
 
-<aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2" ">
+<aside class="bd-aside sticky-xl-top text-body-secondary align-self-start mb-3 mb-xl-5 px-2">
   <h2 class="h6 pt-4 pb-3 mb-4 border-bottom" >Vida Verde</h2>
   <nav class="small" id="toc">
     <ul class="list-unstyled">
@@ -66,8 +67,19 @@
       
       </div>    
       <div>
-      
+        {% if posts.imagen %}
         <img src="{{ posts.imagen.url }}" alt="">
+        {% else %}
+        <p>No hay imágen disponible</p>
+        {% endif %}
+        {% if user.is_superuser or request.user|has_group:"colaborador" %}
+        <div class="container-fluid" style="margin:top 300px;">
+           <a id="boton_post" href="{% url 'apps.posts:post_update' pk=posts.id %}"> Modificar Post</a>
+        </div>
+        <div class="container-fluid" style="margin-top: 300px;">
+           <a id="boton_post" href="{% url 'apps.posts:post_delete' pk=posts.pk %}">Eliminar Post</a>
+        </div>
+        {% endif %}
         <h1 >{{ posts.titulo }}</h1>
         <div class="bd-example-snippet bd-code-snippet"><div class="bd-example m-0 border-0">
         <p class="h2">{{ posts.subtitulo }}</p>
@@ -157,8 +169,7 @@
 <script src=" {% static 'js/bootstrap.bundle.min.js' %} "></script>    
 <script src=" {% static 'js/cheatsheet.js' %} "></script>
 </body>
-
-    
+{% endblock %}
   
 
 

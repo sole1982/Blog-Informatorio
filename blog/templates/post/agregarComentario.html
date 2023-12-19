@@ -1,0 +1,74 @@
+{% extends ' base.html '%}
+
+{% block contenido %}
+
+<form method="POST" action="{% url 'blog:agregar_comentario' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Agregar Comentario</button>
+</form>
+
+<div class="bd-example-snippet bd-code-snippet"><div class="bd-example m-0 border-0">
+    Comentarios
+    
+    </div>
+    
+    <br>
+    <div>
+        <ul class="list-inline">
+    {% for comentario in comentarios %}
+    <li class="list-inline-item">{{comentario.usuario}}  -  {{ comentario.fecha }}</li>
+    
+    <ul>
+        <p> {{ comentario.texto }}</p>
+    </ul>
+    {% empty %}
+    <li> Todavia no hay comentarios</li>
+    {% endfor%}
+    <a id="comentario"></a>
+    
+    <form method="POST">
+    {% csrf_token %}
+    {% if user.is_authenticated   %}
+    <div class="bd-example-snippet bd-code-snippet"><div class="bd-example m-0 border-0">
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>
+        
+            <button class="btn btn-sm btn-outline-secondary collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse"> Comentar
+            </button>
+          <a href="#" class="btn btn-sm btn-outline-secondary">
+            <i class="bi bi-hand-thumbs-up"></i> Me gusta
+          </a>
+          <a href="#" class="btn btn-sm btn-outline-success">
+            <i class="bi bi-share"></i> Compartir
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+    <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+    
+      <li><form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+      <button type="submit"   value="Comentar">Comentar</button>
+    </form></li>
+  
+    </ul>
+  
+   
+    {% else %}
+    <h2>debes uniciar sesion</h2>
+    <a class="btn" href="#">iniciar sesion</a>
+    <input type="hidden" name="next" >
+    {% endif%}
+    </form>
+
+
+    
+    </div>
+      </div>
+
+{% endblock %}

@@ -15,6 +15,7 @@ class RegistroUsuarioForm(UserCreationForm):
            super().__init__(*args, **kwargs)
            self.use_required_attribute = False
 
+
     class LoginForm(forms.Form):
         username = forms.CharField(label = 'Nombre de usuario')
         password = forms.CharField(label='Contraseña', widget= forms.PasswordInput)

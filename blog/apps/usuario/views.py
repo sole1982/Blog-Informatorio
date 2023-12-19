@@ -25,7 +25,7 @@ class LoginUsuario(LoginView):
     def get_success_url(self):
         messages.success(self.request, 'Login exitoso.')
 
-        return reverse('apps.usuario:login')
+        return reverse('index')
     
 
 class LogoutUsuario(LogoutView):
@@ -34,5 +34,5 @@ class LogoutUsuario(LogoutView):
     def get_success_url(self):
         messages.success(self.request, 'Logout exitoso.')
 
-        return reverse('apps.usuario:logout')
+        return reverse('index')
     

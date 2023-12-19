@@ -16,6 +16,7 @@
 <!-- NavBar Boostrap-->
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbars-offcanvas/">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
 
   
 </head>
@@ -72,26 +73,31 @@
   </ul>
 </div>
 <!--navbar horizontal -->
-<div class="navegacion-horizontal navbar d-none d-sm-flex fixed-top">
+<div class="navegacion-horizontal navbar d-none d-sm-flex ">
 <li><a class="nav-item ms-3" href="{% url 'index' %}">Vida Verde</a></li>
 <li><a class="nav-item" href="{% url 'apps.posts:posts' %} ">Post</a></li>  
  
 
 <li class="nav-item dropdown"><a class="nav-link me-3"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Noticias</a>
  <ul class="dropdown-menu" style="background-color: rgba(221, 230, 222, 0.102);">
-  
-    <li><a class="dropdown-item" href="#"> Información General </a> </li>
-    <li><a class="dropdown-item" href="#"> Biodiversidad </a> </li>       
-    <li>
-      <hr class="dropdown-divider">
-    </li>
+     
+  {% for categoria in categorias %}
+         
+  <li>{{ categoria.nombre }}</li>
+  {% empty %}
+  <li>No hay categoría</li>
+{% endfor %}
+    
     <li><a class="dropdown-item" href="#">Todas</a></li>
   </ul>
 </li>
   
 <li><a class="nav-item me-4" href="{% url 'apps.contacto:contacto' %}">Contacto</a></li> 
+{% if user.is_authenticated %}
+<li><a class="nav-item me-4" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a></li>
+{% else %}
 <li><a class="nav-item me-4" href="{% url 'apps.usuario:login' %}">Iniciar Sesión</a></li>
-
+{% endif %}
 </ul>
 
 </div>
@@ -192,66 +198,7 @@
 
 
 <!--==============================footer=================================-->
-<footer>
 
-<h1> -------------- 👣 Inicio del Footer 👣(borrar después)--------------- </h1>
-  
- 
-<section id="content">
-  <div class="container_12">
-    <div class="wrapper">
-      <article class="grid_4">
-        <div class="indent-right">
-          <div class="maxheight img-indent-bot">
-            <h3>Contacto</h3>
-            <p>Guide.com is one o free website templates created by TemplateMonster.com. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
-            This Guide.com Template goes with two pack ages – with PSD source files and without them. PSD source files are available for free for the registered members of TemplateMonster.com. The basic package (without PSD source) is available for anyone without registration. </div>
-          <a class="button" href="#">More</a> </div>
-      </article>
-      <article class="grid_4">
-        <div class="indent">
-          <div class="maxheight img-indent-bot">
-            <h3>Últimas Noticias</h3>
-            <time class="tdate-1" datetime="2012-02-06"><a class="link" href="#">Posted: 6.02.2012</a></time>
-            <p>Nam liber tempor cum soluta nobis eleifend option congue nihimperdiet doming quod mazim placerat facer possim assum orem ipsum dolor sit amet consectetuer.</p>
-            <time class="tdate-1" datetime="2012-02-04"><a class="link" href="#">Posted: 4.02.2012</a></time>
-            Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </div>
-          <a class="button" href="#">More</a> </div>
-      </article>
-      <article class="grid_4">
-        <div class="indent-left">
-          <div class="maxheight img-indent-bot">
-            <h3 class="p1">Categorías</h3>
-            <ul class="list-1">
-              <li><a href="#">Información General</a></li>
-              <li><a href="#">Biodiversidad</a></li>
-              <li><a href="#">Reciclaje</a></li>
-              <li><a href="#">Cambio Climático</a></li>
-              <li><a href="#">Vida Verde</a></li>
-              <li><a href="#">Energías Renovables</a></li>
-              <li><a href="#">Huerta Familiar</a></li>
-              <li><a href="#">Permacultura</a></li>
-              <li><a href="#">Educación Ambiental</a></li>
-            </ul>
-          </div>
-          <a class="button" href="#">More</a> </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<div class="col-md-3">
-  <h4>Redes Sociales</h4>
-  <ul class="list-unstyled">
-    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
-    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-  </ul>
-
-  <div class="inner">
-    <div class="footer-bg"> VidaVerde.com &copy; 2012 <span>Website Template by <a target="_blank" href="#" class="link">Comisión 2</a></span> </div>
-  </div>
-</footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

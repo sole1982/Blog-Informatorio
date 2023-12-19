@@ -1,85 +1,60 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra de Navegación con Bootstrap</title>
-    <!-- Incluye Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Agrega tu propio estilo personalizado -->
-    <style>
-        .scrolled {
-            background-color: #f8f9fa;
-            transition: background-color 0.3s ease-in-out;
-        }
+<footer>
 
-        .hide-toggler {
-            display: none;
-        }
-
-        .second-navbar {
-            background-color: #f8f9fa; /* Puedes personalizar este color */
-            display: none;
-            transition: display 0.3s ease-in-out;
-        }
-
-        .show-second-navbar {
-            display: block !important;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Barra de Navegación principal -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" id="mainNavbar">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'index' %}">Vida Verde</a>
-            <button class="navbar-toggler hide-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <!-- ... (tus otros elementos) ... -->
+    <h1> -------------- 👣 Inicio del Footer 👣(borrar después)--------------- </h1>
+      
+     
+    <section id="content">
+      <div class="container_12">
+        <div class="wrapper">
+          <article class="grid_4">
+            <div class="indent-right">
+              <div class="maxheight img-indent-bot">
+                <h3>Contacto</h3>
+                <p>Guide.com is one o free website templates created by TemplateMonster.com. This website template is optimized for 1280X1024 screen resolution. It is also XHTML &amp; CSS valid.</p>
+                This Guide.com Template goes with two pack ages – with PSD source files and without them. PSD source files are available for free for the registered members of TemplateMonster.com. The basic package (without PSD source) is available for anyone without registration. </div>
+              <a class="button" href="#">More</a> </div>
+          </article>
+          <article class="grid_4">
+            <div class="indent">
+              <div class="maxheight img-indent-bot">
+                <h3>Últimas Noticias</h3>
+                <time class="tdate-1" datetime="2012-02-06"><a class="link" href="#">Posted: 6.02.2012</a></time>
+                <p>Nam liber tempor cum soluta nobis eleifend option congue nihimperdiet doming quod mazim placerat facer possim assum orem ipsum dolor sit amet consectetuer.</p>
+                <time class="tdate-1" datetime="2012-02-04"><a class="link" href="#">Posted: 4.02.2012</a></time>
+                Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation. </div>
+              <a class="button" href="#">More</a> </div>
+          </article>
+          <article class="grid_4">
+            <div class="indent-left">
+              <div class="maxheight img-indent-bot">
+                <h3 class="p1">Categorías</h3>
+                <ul class="list-1">
+                  <li><a href="#">Información General</a></li>
+                  <li><a href="#">Biodiversidad</a></li>
+                  <li><a href="#">Reciclaje</a></li>
+                  <li><a href="#">Cambio Climático</a></li>
+                  <li><a href="#">Vida Verde</a></li>
+                  <li><a href="#">Energías Renovables</a></li>
+                  <li><a href="#">Huerta Familiar</a></li>
+                  <li><a href="#">Permacultura</a></li>
+                  <li><a href="#">Educación Ambiental</a></li>
                 </ul>
-            </div>
+              </div>
+              <a class="button" href="#">More</a> </div>
+          </article>
         </div>
-    </nav>
-
-    <!-- Barra de Navegación secundaria (puede ser tu offcanvas o cualquier otro elemento) -->
-    <div class="secondNavbar" id="secondNavbar">
-        <!-- Contenido de la segunda barra de navegación -->
-        <a href="#">Enlace 1</a>
-        <a href="#">Enlace 2</a>
-        <!-- ... (tus otros elementos) ... -->
-    </div>
-
-    <!-- Contenido principal -->
-    <div class="container mt-5">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-    </div>
-
-    <!-- Incluye Bootstrap JS y Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Agrega tu propio script JavaScript para cambiar la apariencia en el scroll -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var mainNavbar = document.getElementById("mainNavbar");
-            var secondNavbar = document.getElementById("secondNavbar");
-            var togglerButton = document.querySelector(".navbar-toggler");
-
-            window.addEventListener("scroll", function () {
-                mainNavbar.classList.toggle("scrolled", window.scrollY > 0);
-                togglerButton.classList.toggle("hide-toggler", window.scrollY > 0);
-
-                // Cambia a la segunda barra de navegación si hace scroll hacia abajo
-                if (window.scrollY > 0) {
-                    secondNavbar.classList.add("show-second-navbar");
-                } else {
-                    secondNavbar.classList.remove("show-second-navbar");
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+      </div>
+    </section>
+    
+    <div class="col-md-3">
+      <h4>Redes Sociales</h4>
+      <ul class="list-unstyled">
+        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+      </ul>
+    
+      <div class="inner">
+        <div class="footer-bg"> VidaVerde.com &copy; 2012 <span>Website Template by <a target="_blank" href="#" class="link">Comisión 2</a></span> </div>
+      </div>
+    </footer>

@@ -11,6 +11,9 @@ class RegistroUsuarioForm(UserCreationForm):
         model = Usuario
         fields = ['username', 'first_name', 'last_name', 'password1', 'password2', 'email', 'imagen']
 
+        def __init__(self, *args, **kwargs):
+           super().__init__(*args, **kwargs)
+           self.use_required_attribute = False
 
     class LoginForm(forms.Form):
         username = forms.CharField(label = 'Nombre de usuario')

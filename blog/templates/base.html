@@ -86,22 +86,22 @@
 </li>
 
 <li><a class="nav-item me-4" href="{% url 'apps.contacto:contacto' %}">Contacto</a></li> 
-    {% if user.is_authenticated %}
-        <li id="logout-option" style="position: relative;">
-            <img
-                src="{{ user.imagen.url }}"
-                alt="imagen_usuario"
-                id="usuario-imagen"
-                onclick="toggleLogoutOption()"
-                style="max-width: 50px; max-height: 50px; cursor: pointer;"
-            >
-            <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; left: 0; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <a class="nav-item me-4" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a>
-            </div>
-        </li>
-    {% else %}
-        <li><a class="nav-item me-4" href="{% url 'apps.usuario:login' %}">Iniciar Sesión</a></li>
-    {% endif %}
+{% if user.is_authenticated %}
+<li id="logout-option" style="position: relative;">
+    <img
+        src="{{ user.imagen.url }}"
+        alt="imagen_usuario"
+        id="usuario-imagen"
+        onclick="toggleLogoutOption()"
+        style="max-width: 50px; max-height: 50px; cursor: pointer; border-radius: 50%;"
+    >
+    <div id="logout-dropdown" style="display: none; position: absolute; top: 100%; left: 0; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <a class="nav-item me-4" href="{% url 'apps.usuario:logout' %}">Cerrar Sesión</a>
+    </div>
+</li>
+{% else %}
+<li><a class="nav-item me-4" href="{% url 'apps.usuario:login' %}">Iniciar Sesión</a></li>
+{% endif %}
 
 </ul>
 
@@ -229,9 +229,9 @@
       </div>
       <div class="col-md-3 mb-4">
         <h3 class="text-primary">Contacto</h3>
-        <ul class="list-unstyled">
-          <li class="text-light">Dirección: Av. SiempreViva n° 742</li>
-          <li class="text-light">Email: comision2.grupo4@gmail.com</li>
+        <ul class="list-unstyled" style="margin-bottom: 20px>
+          <li class="text-light">Av. SiempreViva n° 742</li>
+          <li class="text-light">comision2.grupo4@gmail.com</li>
           <li class="text-light">Teléfono: 03 03 456</li>
         </ul>
         <a href="{% url 'apps.contacto:contacto' %}" class="btn btn-primary mt-3">Contáctanos</a>

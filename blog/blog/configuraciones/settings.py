@@ -31,8 +31,13 @@ INSTALLED_APPS = [
     'apps.usuario',
     'apps.posts',
     'apps.contacto',
+    'crispy_forms',
+    'crispy_bootstrap5',
    
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 SITE_NAME = 'vidaverde.com'
 

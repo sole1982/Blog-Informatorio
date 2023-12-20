@@ -17,6 +17,7 @@ SECRET_KEY = 'django-insecure-@a!su)yw7zidcgio!_nbgu=6-udv=7=d^j-kwi+@yek!pfkei*
 
 AUTH_USER_MODEL = 'usuario.Usuario'
 
+LOGIN_URL = 'login'
 
 # Application definition
 
@@ -126,5 +127,5 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
+EDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

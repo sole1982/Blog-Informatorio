@@ -5,15 +5,13 @@ from django.contrib.auth import authenticate, login
 
 
 class RegistroUsuarioForm(UserCreationForm):
-
-
     class Meta:
         model = Usuario
         fields = ['username', 'first_name', 'last_name', 'password1', 'password2', 'email', 'imagen']
 
-        def __init__(self, *args, **kwargs):
-           super().__init__(*args, **kwargs)
-           self.use_required_attribute = False
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.use_required_attribute = False
 
 
     class LoginForm(forms.Form):

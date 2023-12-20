@@ -14,10 +14,10 @@ class RegistrarUsuario(CreateView):
     def form_valid(self, form):
         responde = super().form_valid(form)
         messages.success(self.request, 'Registro exitoso. Por favor, inicia sesión.')
-        group = Group.objects.get(name = 'Registrado')
+        group = Group.objects.get(name = 'registrado')
         self.object.groups.add(group)
         form.save()
-        return redirect('registration/login.html')
+        return redirect('index')
 
 class LoginUsuario(LoginView):
     template_name = 'registration/login.html'
@@ -34,5 +34,5 @@ class LogoutUsuario(LogoutView):
     def get_success_url(self):
         messages.success(self.request, 'Logout exitoso.')
 
-        return reverse('index')
+        return reverse('apps.usuario:logout')
     
